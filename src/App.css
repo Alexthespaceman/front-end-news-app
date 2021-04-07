@@ -1,7 +1,40 @@
 .App {
   text-align: center;
+  border: 4px red solid;
 }
 
+/* HEADER */
+
+.header {
+  text-align: center;
+  border: 4px green solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.articles {
+  text-align: center;
+  border: 4px blue solid;
+}
+
+.sub-nav {
+  text-align: center;
+  border: 4px yellow solid;
+}
+
+.nav {
+  text-align: center;
+  border: 4px orange solid;
+}
+
+.sub-header {
+  text-align: center;
+  border: 4px lightgreen solid;
+}
+
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,7 +55,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
