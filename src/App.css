@@ -1,7 +1,11 @@
 .App {
   text-align: center;
   border: 4px red solid;
+  height: 100vh;
 }
+
+/* overflow-scroll */
+/* nav-bar-rigid grid */
 
 /* HEADER */
 

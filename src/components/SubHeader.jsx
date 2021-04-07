@@ -1,3 +1,4 @@
+import { Link } from "@reach/router";
 import React from "react";
 
 function SubHeader(props) {
@@ -5,6 +6,9 @@ function SubHeader(props) {
     <div className="sub-header">
       <button>prev page</button>
       <button>next page</button>
+      <Link to="/topics">
+        <p>Topics</p>
+      </Link>
     </div>
   );
 }

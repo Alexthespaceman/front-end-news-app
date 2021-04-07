@@ -1,6 +1,7 @@
 import { Link } from "@reach/router";
 import { Component } from "react";
 import * as api from "../api";
+
 class ArticleList extends Component {
   state = { articles: [], isLoading: true };
 
@@ -10,29 +11,52 @@ class ArticleList extends Component {
     });
   }
 
-  // componentDidUpdate(previousProps, previousState) {
-  //   const { article } = this.props;
-  //   if (article !== previousProps.article) {
-  //     api.getAllArticles(article);
-  //   }
-  // }
+  componentDidUpdate(previousProps, previousState) {
+    const { article } = this.props;
+    if (article !== previousProps.article) {
+      api.getAllArticles(article);
+    }
+  }
+
+  upVote = () => {
+    console.log("invoked");
+    this.setState((prevState) => {
+      return { articles: prevState.votes + 1 };
+    });
+    console.log(this.state.votes);
+  };
+
+  // downVote = (article_id, votes) => {};
 
   render() {
-    console.log(this.state);
     const { articles } = this.state;
     return (
       <div>
         {articles.map((article) => {
-          const { author, title, topic, votes, comment_count } = article;
+          const {
+            author,
+            title,
+            topic,
+            votes,
+            comment_count,
+            article_id,
+          } = article;
           return (
-            <div className="articles">
-              <Link to="/article_id">
-                <p>{author}</p>
+            <div key={article_id} className="articles">
+              <Link to={`/articles/${article_id}`}>
+                <p>{title}</p>
               </Link>
-              <p>{title}</p>
-              <p>{topic}</p>
+
+              <p>
+                posted in {topic} by{" "}
+                <Link to={`/users/${author}`}>
+                  <p>{author}</p>
+                </Link>
+              </p>
               <p>{votes}</p>
-              <p>{comment_count}</p>
+              <button onClick={this.upVote}>up vote</button>
+              <button>down vote</button>
+              <p>comments:{comment_count}</p>
             </div>
           );
         })}

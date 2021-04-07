@@ -4,10 +4,12 @@ import "./App.css";
 import AddArticle from "./components/AddArticle";
 import ArticleList from "./components/ArticleList";
 import Header from "./components/Header";
-import IndividualArticles from "./components/IndividualArticle";
+import IndividualArticleComments from "./components/IndividualArticleComments";
+import IndividualArticle from "./components/IndividualArticles";
 import Navbar from "./components/Navbar";
 import SubHeader from "./components/SubHeader";
 import SubNavbar from "./components/SubNavbar";
+import { Users } from "./components/Users";
 
 class App extends Component {
   state = {};
@@ -18,9 +20,11 @@ class App extends Component {
         <Header />
         <SubHeader />
         <Router>
-          <ArticleList path="/articles" />
-          <IndividualArticles path="/articles/:article_id" />
+          <ArticleList path="/" />
+          <IndividualArticle path="/articles/:article_id" />
           <AddArticle path="/add-article" />
+          <IndividualArticleComments path="/articles/:article_id/comments" />
+          <Users path="/users/user_id" />
         </Router>
         <SubNavbar />
         <Navbar />
