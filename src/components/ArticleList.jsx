@@ -43,7 +43,7 @@ class ArticleList extends Component {
           } = article;
           return (
             <div key={article_id} className="articles">
-              <Link to={`/articles/${article_id}`}>
+              <Link to={`/article/${article_id}`}>
                 <p>{title}</p>
               </Link>
 

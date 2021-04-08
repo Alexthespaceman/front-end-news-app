@@ -19,7 +19,6 @@ class IndividualArticle extends Component {
 
     return (
       <section className="article">
-        <p>hello doug</p>
         <h2>{this.state.article.title}</h2>
         <p>{this.state.article.body}</p>
         <p>votes: {this.state.article.votes}</p>
@@ -29,7 +28,9 @@ class IndividualArticle extends Component {
         <Link to={`/articles/${article_id}/comments`}>
           <button>Comments</button>
         </Link>
-        <button>Add Comment</button>
+        <Link to={`/articles/${article_id}/comments/add-comment`}>
+          <button>Add Comment</button>
+        </Link>
       </section>
     );
   }

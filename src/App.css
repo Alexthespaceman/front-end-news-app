@@ -58,6 +58,11 @@
   border: 4px rgb(245, 248, 81) solid;
 }
 
+.users {
+  text-align: center;
+  border: 4px rgb(238, 120, 41) solid;
+}
+
 /* 
 .App-logo {
   height: 40vmin;

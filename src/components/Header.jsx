@@ -2,6 +2,8 @@ import { Link } from "@reach/router";
 import React from "react";
 
 class Header extends React.Component {
+  state = {};
+
   render() {
     return (
       <header className="header">
@@ -9,8 +11,8 @@ class Header extends React.Component {
           <h1> NC News App </h1>
         </Link>
 
-        <Link to="/users/:user_id">
-          <button type="button">Current User</button>
+        <Link to="/users">
+          <button type="button">Users</button>
         </Link>
       </header>
     );

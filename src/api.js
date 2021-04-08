@@ -33,3 +33,15 @@ export const getTopics = () => {
     return data.topics;
   });
 };
+
+export const getUsers = () => {
+  return request.get(`/users`).then(({ data }) => {
+    return data.users;
+  });
+};
+
+export const getUserByUsername = (username) => {
+  return request.get(`/users/${username}`).then(({ data }) => {
+    return data.user;
+  });
+};

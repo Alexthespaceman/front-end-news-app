@@ -26,12 +26,14 @@ class IndividualArticleComments extends Component {
             const { comment_id, author, votes, created_at, body } = comment;
             return (
               <div className="comments" key={comment_id}>
-                <Link to="/users/user_id">
+                <Link to={`/users/${author}`}>
                   <p>userName:{author}</p>
                 </Link>
                 <p>{body}</p>
                 <p>comment votes:{votes}</p>
                 <p> time: {created_at}</p>
+                <button>up vote</button>
+                <button>down vote</button>
               </div>
             );
           })
