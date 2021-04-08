@@ -21,3 +21,15 @@ export const getCommentsByArticleId = (article_id) => {
     return data;
   });
 };
+
+export const getTopicByQuery = (slug) => {
+  return request.get(`/articles?topic=${slug}`).then(({ data }) => {
+    return data.articles;
+  });
+};
+
+export const getTopics = () => {
+  return request.get(`/topics`).then(({ data }) => {
+    return data.topics;
+  });
+};

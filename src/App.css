@@ -38,6 +38,26 @@
   border: 4px lightgreen solid;
 }
 
+/* topics */
+.topics {
+  list-style: none;
+  text-align: center;
+}
+.topics2 {
+  text-align: center;
+  border: 4px orange solid;
+}
+
+.comments {
+  text-align: center;
+  border: 4px purple solid;
+}
+
+.topic-article {
+  text-align: center;
+  border: 4px rgb(245, 248, 81) solid;
+}
+
 /* 
 .App-logo {
   height: 40vmin;

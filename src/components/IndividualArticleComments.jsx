@@ -17,7 +17,6 @@ class IndividualArticleComments extends Component {
 
   render() {
     const { comments, isLoading } = this.state;
-    console.log(comments);
     return (
       <div>
         {isLoading ? (
@@ -26,7 +25,7 @@ class IndividualArticleComments extends Component {
           comments.comments.map((comment) => {
             const { comment_id, author, votes, created_at, body } = comment;
             return (
-              <div key={comment_id}>
+              <div className="comments" key={comment_id}>
                 <Link to="/users/user_id">
                   <p>userName:{author}</p>
                 </Link>

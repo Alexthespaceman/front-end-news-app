@@ -6,7 +6,10 @@ class Navbar extends Component {
   render() {
     return (
       <div className="nav">
-        <button>most populer</button>
+        <Link to="#">
+          <button>most popular</button>
+        </Link>
+
         <button>newest</button>
         <button>most rated</button>
         <Link to="/add-article">

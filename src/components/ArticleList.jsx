@@ -7,24 +7,24 @@ class ArticleList extends Component {
 
   componentDidMount() {
     api.getAllArticles().then(({ articles }) => {
-      this.setState({ articles: articles });
+      this.setState({ articles: articles, isLoading: false });
     });
   }
 
-  componentDidUpdate(previousProps, previousState) {
-    const { article } = this.props;
-    if (article !== previousProps.article) {
-      api.getAllArticles(article);
-    }
-  }
+  // componentDidUpdate(previousProps, previousState) {
+  //   const { article } = this.props;
+  //   if (article !== previousProps.article) {
+  //     api.getAllArticles(article);
+  //   }
+  // }
 
-  upVote = () => {
-    console.log("invoked");
-    this.setState((prevState) => {
-      return { articles: prevState.votes + 1 };
-    });
-    console.log(this.state.votes);
-  };
+  // upVote = () => {
+  //   console.log("invoked");
+  //   this.setState((prevState) => {
+  //     return { articles: prevState.votes + 1 };
+  //   });
+  //   console.log(this.state.votes);
+  // };
 
   // downVote = (article_id, votes) => {};
 
@@ -53,8 +53,8 @@ class ArticleList extends Component {
                   <p>{author}</p>
                 </Link>
               </p>
-              <p>{votes}</p>
-              <button onClick={this.upVote}>up vote</button>
+              <p>Article votes:{votes}</p>
+              <button>up vote</button>
               <button>down vote</button>
               <p>comments:{comment_count}</p>
             </div>
