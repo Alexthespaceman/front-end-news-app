@@ -45,3 +45,33 @@ export const getUserByUsername = (username) => {
     return data.user;
   });
 };
+
+export const changeVotes = (article_id, increment) => {
+  return request
+    .patch(`/articles/${article_id}`, { inc_votes: increment })
+    .then(({ data }) => {
+      return data.user;
+    });
+};
+
+export const submitComment = (article_id, value) => {
+  return request
+    .post(`/articles/${article_id}/comments`, {
+      userName: "jessjelly",
+      body: value,
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.dir(err);
+    });
+};
+
+export const changeVotess = (comment_id, increment) => {
+  return request
+    .patch(`/commets/${comment_id}`, { inc_votes: increment })
+    .then(({ data }) => {
+      return data.user;
+    });
+};

@@ -1,6 +1,7 @@
 import { Link } from "@reach/router";
 import { Component } from "react";
 import * as api from "../api";
+import VoteChanger from "./VoteChanger";
 
 class IndividualArticleComments extends Component {
   state = {
@@ -32,8 +33,7 @@ class IndividualArticleComments extends Component {
                 <p>{body}</p>
                 <p>comment votes:{votes}</p>
                 <p> time: {created_at}</p>
-                <button>up vote</button>
-                <button>down vote</button>
+                <VoteChanger />
               </div>
             );
           })

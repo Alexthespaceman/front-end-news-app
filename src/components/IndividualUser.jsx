@@ -6,7 +6,6 @@ class IndividualUser extends Component {
 
   componentDidMount() {
     const { username } = this.props;
-    console.log(username);
     api.getUserByUsername(username).then(({ user }) => {
       this.setState({ user: user, isLoading: false });
     });
