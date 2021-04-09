@@ -14,7 +14,7 @@ class TopicPage extends Component {
   }
 
   render() {
-    const { articles } = this.state;
+    const { articles, isLoading } = this.state;
     return (
       <div>
         {isLoading ? (

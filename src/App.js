@@ -1,7 +1,6 @@
 import { Router } from "@reach/router";
 import { Component } from "react";
 import "./App.css";
-import AddArticle from "./components/AddArticle";
 import ArticleList from "./components/ArticleList";
 import Form from "./components/Form";
 import Header from "./components/Header";
@@ -30,14 +29,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <SubHeader />
+        <div className="head">
+          <Header />
+          <SubHeader />
+        </div>
+
         <Router>
           <ArticleList path="/" />
           <IndividualArticle path="/article/:article_id" />
           <Topics path="/topics" />
           <TopicPage path="/articles/:slug" />
-          <AddArticle path="/add-article" />
+
           <IndividualArticleComments path="/articles/:article_id/comments" />
           <Form path="/articles/:article_id/comments" />
           <Users path="/users" />
@@ -45,8 +47,11 @@ class App extends Component {
           <MostVotes path="/articles/most-votes" word="votes" />
           <SortByAuthor path="/articles/author" word="author" />
         </Router>
-        <SubNavbar />
-        <Navbar />
+        <div className="nav">
+          {" "}
+          <SubNavbar />
+          <Navbar />
+        </div>
       </div>
     );
   }

@@ -16,7 +16,7 @@ class IndividualArticle extends Component {
   }
 
   render() {
-    const { article_id } = this.props;
+    const { article_id, isLoading } = this.props;
 
     return (
       <div>

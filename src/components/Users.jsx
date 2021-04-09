@@ -10,7 +10,7 @@ class Users extends Component {
   }
 
   render() {
-    const { user } = this.state;
+    const { user, isLoading } = this.state;
     return (
       <div>
         {isLoading ? (

@@ -18,6 +18,11 @@
   align-items: center;
 }
 
+.head {
+  position: sticky;
+  top: 0;
+}
+
 .articles {
   text-align: center;
   border: 4px blue solid;
@@ -26,11 +31,14 @@
 .sub-nav {
   text-align: center;
   border: 4px yellow solid;
+  position: sticky;
 }
 
 .nav {
   text-align: center;
   border: 4px orange solid;
+  position: sticky;
+  bottom: 0;
 }
 
 .sub-header {

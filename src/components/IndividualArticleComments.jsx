@@ -38,13 +38,17 @@ class IndividualArticleComments extends Component {
                   <p>User name: {author}</p>
                 </Link>
                 <p>{body}</p>
-                <p>comment votes:{votes}</p>
+
                 <p> time: {created_at}</p>
-                <VoteChanger
-                  votes={votes}
-                  word="comments"
-                  value_id={comment_id}
-                />
+                {author === "jessjelly" ? (
+                  <button>delete comment</button>
+                ) : (
+                  <VoteChanger
+                    votes={votes}
+                    word="comments"
+                    value_id={comment_id}
+                  />
+                )}
               </div>
             );
           })
