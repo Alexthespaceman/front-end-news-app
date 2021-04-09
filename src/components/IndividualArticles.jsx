@@ -19,23 +19,29 @@ class IndividualArticle extends Component {
     const { article_id } = this.props;
 
     return (
-      <section className="article">
-        <h2>{this.state.article.title}</h2>
-        <p>{this.state.article.body}</p>
-        <p>votes: {this.state.article.votes}</p>
-        <Link to={`/articles/${article_id}/comments`}>
-          <p>Comments: {this.state.article.comment_count}</p>
-        </Link>
+      <div>
+        {isLoading ? (
+          <p>loading</p>
+        ) : (
+          <section className="article">
+            <h2>{this.state.article.title}</h2>
+            <p>{this.state.article.body}</p>
+            <p>votes: {this.state.article.votes}</p>
+            <Link to={`/articles/${article_id}/comments`}>
+              <p>Comments: {this.state.article.comment_count}</p>
+            </Link>
 
-        <VoteChanger
-          value_id={article_id}
-          word="articles"
-          votes={this.state.article.votes}
-        />
-        <Link to={`/articles/${article_id}/comments/add-comment`}>
-          <button>Add Comment</button>
-        </Link>
-      </section>
+            <VoteChanger
+              value_id={article_id}
+              word="articles"
+              votes={this.state.article.votes}
+            />
+            <Link to={`/articles/${article_id}/comments/add-comment`}>
+              <button>Add Comment</button>
+            </Link>
+          </section>
+        )}
+      </div>
     );
   }
 }

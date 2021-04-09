@@ -13,15 +13,19 @@ class Users extends Component {
     const { user } = this.state;
     return (
       <div>
-        {user.map((user) => {
-          const { username, avatar_url } = user;
-          return (
-            <div className="users">
-              <p>{username}</p>
-              <img className="user-img" src={avatar_url} alt="pic"></img>
-            </div>
-          );
-        })}
+        {isLoading ? (
+          <p>loading</p>
+        ) : (
+          user.map((user) => {
+            const { username, avatar_url } = user;
+            return (
+              <div className="users">
+                <p>{username}</p>
+                <img className="user-img" src={avatar_url} alt="pic"></img>
+              </div>
+            );
+          })
+        )}
       </div>
     );
   }

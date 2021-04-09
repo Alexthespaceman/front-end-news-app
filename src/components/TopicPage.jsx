@@ -17,28 +17,32 @@ class TopicPage extends Component {
     const { articles } = this.state;
     return (
       <div>
-        {articles.map((article) => {
-          const {
-            author,
-            title,
-            topic,
-            votes,
-            comment_count,
-            article_id,
-          } = article;
-          return (
-            <div className="topic-article" key={article_id}>
-              <Link to={`/article/${article_id}`}>
-                <p>Article Title{title}</p>
-              </Link>
+        {isLoading ? (
+          <p>loading</p>
+        ) : (
+          articles.map((article) => {
+            const {
+              author,
+              title,
+              topic,
+              votes,
+              comment_count,
+              article_id,
+            } = article;
+            return (
+              <div className="topic-article" key={article_id}>
+                <Link to={`/article/${article_id}`}>
+                  <p>Article Title{title}</p>
+                </Link>
 
-              <p>user:{author}</p>
-              <p>Topic:{topic}</p>
-              <p>Votes{votes}</p>
-              <p>Comment Count:{comment_count}</p>
-            </div>
-          );
-        })}
+                <p>user:{author}</p>
+                <p>Topic:{topic}</p>
+                <p>Votes{votes}</p>
+                <p>Comment Count:{comment_count}</p>
+              </div>
+            );
+          })
+        )}
       </div>
     );
   }

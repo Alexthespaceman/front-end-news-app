@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as api from "../api";
 
 class IndividualUser extends Component {
-  state = { user: [] };
+  state = { user: [], isLoading: true };
 
   componentDidMount() {
     const { username } = this.props;
@@ -14,10 +14,16 @@ class IndividualUser extends Component {
   render() {
     const { username, avatar_url, name } = this.state.user;
     return (
-      <div className="users">
-        <p>{username}</p>
-        <img className="user-img" src={avatar_url} alt="pic"></img>
-        <p>{name}</p>
+      <div>
+        {isLoading ? (
+          <p>loading</p>
+        ) : (
+          <div className="users">
+            <p>{username}</p>
+            <img className="user-img" src={avatar_url} alt="pic"></img>
+            <p>{name}</p>
+          </div>
+        )}
       </div>
     );
   }
