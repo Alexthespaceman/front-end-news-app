@@ -28,12 +28,16 @@ class IndividualArticleComments extends Component {
             return (
               <div className="comments" key={comment_id}>
                 <Link to={`/users/${author}`}>
-                  <p>userName:{author}</p>
+                  <p>User name: {author}</p>
                 </Link>
                 <p>{body}</p>
                 <p>comment votes:{votes}</p>
                 <p> time: {created_at}</p>
-                <VoteChanger />
+                <VoteChanger
+                  votes={votes}
+                  word="articles"
+                  value_id={comment_id}
+                />
               </div>
             );
           })

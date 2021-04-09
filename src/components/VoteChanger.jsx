@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import * as api from "../api";
+
 class VoteChanger extends Component {
   state = {
     voteChanges: 0,
     err: null,
   };
 
-  updateVotes = (article_id, increment) => {
+  updateVotes = (value_id, increment, word) => {
     this.setState((currentState) => {
       return {
         voteChanges: currentState.voteChanges + increment,
       };
     });
-    api.changeVotes(article_id, increment).catch((err) => {
+    api.changeVotes(value_id, increment, word).catch((err) => {
       this.setState((currentState) => {
         return {
           voteChanges: currentState.voteChanges - increment,
@@ -22,13 +23,17 @@ class VoteChanger extends Component {
   };
 
   render() {
-    const { article_id, votes } = this.props;
+    const { value_id, votes, word } = this.props;
 
     return (
       <div>
-        <button onClick={() => this.updateVotes(article_id, 1)}>up vote</button>
-        <p className="votes">Article votes{votes + this.state.voteChanges}</p>
-        <button onClick={() => this.updateVotes(article_id, -1)}>
+        <button onClick={() => this.updateVotes(value_id, 1, word)}>
+          up vote
+        </button>
+        <p className="votes">
+          {word} votes: {votes + this.state.voteChanges}
+        </p>
+        <button onClick={() => this.updateVotes(value_id, -1, word)}>
           down vote
         </button>
       </div>

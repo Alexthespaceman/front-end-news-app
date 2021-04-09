@@ -46,12 +46,8 @@ export const getUserByUsername = (username) => {
   });
 };
 
-export const changeVotes = (article_id, increment) => {
-  return request
-    .patch(`/articles/${article_id}`, { inc_votes: increment })
-    .then(({ data }) => {
-      return data.user;
-    });
+export const changeVotes = (article_id, increment, word) => {
+  return request.patch(`/${word}/${article_id}`, { inc_votes: increment });
 };
 
 export const submitComment = (article_id, value) => {
@@ -68,10 +64,10 @@ export const submitComment = (article_id, value) => {
     });
 };
 
-export const changeVotess = (comment_id, increment) => {
-  return request
-    .patch(`/commets/${comment_id}`, { inc_votes: increment })
-    .then(({ data }) => {
-      return data.user;
-    });
-};
+// export const changeVotes = (comment_id, increment) => {
+//   return request
+//     .patch(`/commets/${comment_id}`, { inc_votes: increment })
+//     .then(({ data }) => {
+//       return data.user;
+//     });
+// };

@@ -55,7 +55,11 @@ class ArticleList extends Component {
                 </Link>
               </p>
 
-              <VoteChanger votes={votes} article_id={article_id} />
+              <VoteChanger
+                votes={votes}
+                value_id={article_id}
+                word="articles"
+              />
               <p>comments:{comment_count}</p>
             </div>
           );

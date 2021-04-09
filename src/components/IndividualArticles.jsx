@@ -1,6 +1,7 @@
 import { Link } from "@reach/router";
 import React, { Component } from "react";
 import * as api from "../api";
+import VoteChanger from "./VoteChanger";
 
 class IndividualArticle extends Component {
   state = {
@@ -22,12 +23,15 @@ class IndividualArticle extends Component {
         <h2>{this.state.article.title}</h2>
         <p>{this.state.article.body}</p>
         <p>votes: {this.state.article.votes}</p>
-        <p>Comments: {this.state.article.comment_count}</p>
-        <button>up vote</button>
-        <button>down vote</button>
         <Link to={`/articles/${article_id}/comments`}>
-          <button>Comments</button>
+          <p>Comments: {this.state.article.comment_count}</p>
         </Link>
+
+        <VoteChanger
+          value_id={article_id}
+          word="articles"
+          votes={this.state.article.votes}
+        />
         <Link to={`/articles/${article_id}/comments/add-comment`}>
           <button>Add Comment</button>
         </Link>

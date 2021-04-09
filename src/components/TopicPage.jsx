@@ -1,3 +1,4 @@
+import { Link } from "@reach/router";
 import React, { Component } from "react";
 import * as api from "../api";
 
@@ -28,7 +29,10 @@ class TopicPage extends Component {
           } = article;
           return (
             <div className="topic-article" key={article_id}>
-              <p>Article Title{title}</p>
+              <Link to={`/article/${article_id}`}>
+                <p>Article Title{title}</p>
+              </Link>
+
               <p>user:{author}</p>
               <p>Topic:{topic}</p>
               <p>Votes{votes}</p>
