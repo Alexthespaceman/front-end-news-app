@@ -1,26 +1,21 @@
 import { Link } from "@reach/router";
-import { Component } from "react";
+import React, { Component } from "react";
 import * as api from "../api";
 import VoteChanger from "./VoteChanger";
 
-class ArticleList extends Component {
+class MostVotes extends Component {
   state = { articles: [], isLoading: true };
 
   componentDidMount() {
-    api.getAllArticles().then(({ articles }) => {
-      this.setState({ articles: articles, isLoading: false });
+    const { word } = this.props;
+    api.sortBy(word).then((data) => {
+      this.setState({ articles: data.articles, isLoading: false });
     });
   }
 
-  // componentDidUpdate(previousProps, previousState) {
-  //   const { article } = this.props;
-  //   if (article !== previousProps.article) {
-  //     api.getAllArticles(article);
-  //   }
-  // }
-
   render() {
     const { articles } = this.state;
+
     return (
       <div>
         {articles.map((article) => {
@@ -59,4 +54,4 @@ class ArticleList extends Component {
   }
 }
 
-export default ArticleList;
+export default MostVotes;

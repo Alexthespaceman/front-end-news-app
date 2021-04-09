@@ -13,7 +13,7 @@ class Topics extends Component {
 
   render() {
     const { topics, isLoading } = this.state;
-    console.log(this.state);
+
     return (
       <div>
         {isLoading ? (

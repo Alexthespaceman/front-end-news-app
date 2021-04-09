@@ -7,14 +7,13 @@ class TopicPage extends Component {
 
   componentDidMount() {
     const { slug } = this.props;
-    console.log(slug);
+
     api.getTopicByQuery(slug).then(({ articles }) => {
       this.setState({ articles: articles, isLoading: false });
     });
   }
 
   render() {
-    console.log(this.state);
     const { articles } = this.state;
     return (
       <div>

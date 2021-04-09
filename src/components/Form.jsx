@@ -11,9 +11,12 @@ class Form extends Component {
 
   handleSubmit = (submitEvent) => {
     const { article_id } = this.props;
+
     const { comment } = this.state;
     submitEvent.preventDefault();
-    api.submitComment(article_id, comment);
+    api.submitComment(article_id, comment).then((newComment) => {
+      this.props.addComment(newComment);
+    });
     this.setState({ comment: "" });
   };
 
@@ -21,7 +24,7 @@ class Form extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="lname">Comment:</label>
+          <label htmlFor="lname">Add a comment:</label>
           <input
             onChange={this.handleChange}
             type="text"

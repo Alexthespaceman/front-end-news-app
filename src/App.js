@@ -8,7 +8,9 @@ import Header from "./components/Header";
 import IndividualArticleComments from "./components/IndividualArticleComments";
 import IndividualArticle from "./components/IndividualArticles";
 import IndividualUser from "./components/IndividualUser";
+import MostVotes from "./components/MostVotes";
 import Navbar from "./components/Navbar";
+import SortByAuthor from "./components/SortByAuthor";
 import SubHeader from "./components/SubHeader";
 import SubNavbar from "./components/SubNavbar";
 import TopicPage from "./components/TopicPage";
@@ -37,9 +39,11 @@ class App extends Component {
           <TopicPage path="/articles/:slug" />
           <AddArticle path="/add-article" />
           <IndividualArticleComments path="/articles/:article_id/comments" />
-          <Form path="/articles/:article_id/comments/add-comment" />
+          <Form path="/articles/:article_id/comments" />
           <Users path="/users" />
           <IndividualUser path="/users/:username" />
+          <MostVotes path="/articles/most-votes" word="votes" />
+          <SortByAuthor path="/articles/author" word="author" />
         </Router>
         <SubNavbar />
         <Navbar />

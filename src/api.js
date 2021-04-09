@@ -18,7 +18,7 @@ export const getArticleById = (article_id) => {
 
 export const getCommentsByArticleId = (article_id) => {
   return request.get(`/articles/${article_id}/comments`).then(({ data }) => {
-    return data;
+    return data.comments.comments;
   });
 };
 
@@ -47,7 +47,7 @@ export const getUserByUsername = (username) => {
 };
 
 export const changeVotes = (article_id, increment, word) => {
-  return request.patch(`/${word}/${article_id}`, { inc_votes: increment });
+  return request.patch(`/${word}/${article_id}/`, { inc_votes: increment });
 };
 
 export const submitComment = (article_id, value) => {
@@ -56,18 +56,13 @@ export const submitComment = (article_id, value) => {
       userName: "jessjelly",
       body: value,
     })
-    .then((data) => {
-      console.log(data);
-    })
     .catch((err) => {
       console.dir(err);
     });
 };
 
-// export const changeVotes = (comment_id, increment) => {
-//   return request
-//     .patch(`/commets/${comment_id}`, { inc_votes: increment })
-//     .then(({ data }) => {
-//       return data.user;
-//     });
-// };
+export const sortBy = (word) => {
+  return request.get(`/articles?sort_by=${word}`).then((res) => {
+    return res.data.articles;
+  });
+};

@@ -6,12 +6,18 @@ class Navbar extends Component {
   render() {
     return (
       <div className="nav">
-        <Link to="#">
+        <Link to="/articles/most-votes">
           <button>most popular</button>
         </Link>
 
-        <button>newest</button>
-        <button>most rated</button>
+        <Link to="/">
+          <button>Newest</button>
+        </Link>
+
+        <Link to="/articles/author">
+          <button>Author</button>
+        </Link>
+
         <Link to="/add-article">
           <button className="add-article-btn"> Add Article </button>
         </Link>

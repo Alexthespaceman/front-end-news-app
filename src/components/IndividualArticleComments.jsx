@@ -1,6 +1,7 @@
 import { Link } from "@reach/router";
 import { Component } from "react";
 import * as api from "../api";
+import Form from "./Form";
 import VoteChanger from "./VoteChanger";
 
 class IndividualArticleComments extends Component {
@@ -11,10 +12,16 @@ class IndividualArticleComments extends Component {
 
   componentDidMount() {
     const { article_id } = this.props;
-    api.getCommentsByArticleId(article_id).then(({ comments }) => {
+    api.getCommentsByArticleId(article_id).then((comments) => {
       this.setState({ comments: comments, isLoading: false });
     });
   }
+
+  addComment = (value) => {
+    this.setState((currentState) => {
+      return { comments: [...currentState.comments, value] };
+    });
+  };
 
   render() {
     const { comments, isLoading } = this.state;
@@ -23,7 +30,7 @@ class IndividualArticleComments extends Component {
         {isLoading ? (
           <p>loading</p>
         ) : (
-          comments.comments.map((comment) => {
+          comments.map((comment) => {
             const { comment_id, author, votes, created_at, body } = comment;
             return (
               <div className="comments" key={comment_id}>
@@ -35,13 +42,20 @@ class IndividualArticleComments extends Component {
                 <p> time: {created_at}</p>
                 <VoteChanger
                   votes={votes}
-                  word="articles"
+                  word="comments"
                   value_id={comment_id}
                 />
               </div>
             );
           })
         )}
+        <div>
+          {" "}
+          <Form
+            addComment={this.addComment}
+            article_id={this.props.article_id}
+          />
+        </div>
       </div>
     );
   }
