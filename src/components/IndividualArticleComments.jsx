@@ -19,12 +19,23 @@ class IndividualArticleComments extends Component {
 
   addComment = (value) => {
     this.setState((currentState) => {
-      return { comments: [...currentState.comments, value] };
+      return {
+        comments: [...currentState.comments, value],
+      };
     });
   };
 
+  // delComment = (comment_id) => {
+  //   const {comment_id} = this.state
+  //   delCommentById(comment_id).then(()=> {
+  //     const updatedComments = [...]
+  //   })
+
+  // }
+
   render() {
     const { comments, isLoading } = this.state;
+    console.log(comments);
     return (
       <div>
         {isLoading ? (
@@ -41,7 +52,7 @@ class IndividualArticleComments extends Component {
 
                 <p> time: {created_at}</p>
                 {author === "jessjelly" ? (
-                  <button>delete comment</button>
+                  <button onClick={this.delComment}>delete comment</button>
                 ) : (
                   <VoteChanger
                     votes={votes}

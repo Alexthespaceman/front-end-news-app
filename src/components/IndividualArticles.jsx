@@ -2,44 +2,49 @@ import { Link } from "@reach/router";
 import React, { Component } from "react";
 import * as api from "../api";
 import VoteChanger from "./VoteChanger";
-
 class IndividualArticle extends Component {
   state = {
-    article: {},
+    article: [],
+    isLoading: true,
   };
 
   componentDidMount() {
     const { article_id } = this.props;
-    api.getArticleById(article_id).then(({ articles }) => {
-      this.setState({ article: articles });
+    api.getArticleById(article_id).then((articles) => {
+      this.setState({ article: articles, isLoading: false });
     });
   }
 
-  render() {
-    const { article_id, isLoading } = this.props;
+  // addComment = (value) => {
+  //   this.setState((currentState) => {
+  //     return { comments: [...currentState.comments, value] };
+  //   });
+  // };
 
+  render() {
+    const { body, comment_count, votes, title } = this.state.article;
+    const { article_id, isLoading } = this.props;
     return (
       <div>
         {isLoading ? (
           <p>loading</p>
         ) : (
-          <section className="article">
-            <h2>{this.state.article.title}</h2>
-            <p>{this.state.article.body}</p>
-            <p>votes: {this.state.article.votes}</p>
-            <Link to={`/articles/${article_id}/comments`}>
-              <p>Comments: {this.state.article.comment_count}</p>
-            </Link>
+          <div>
+            <section className="article">
+              <h2>{title}</h2>
+              <p>{body}</p>
 
-            <VoteChanger
-              value_id={article_id}
-              word="articles"
-              votes={this.state.article.votes}
-            />
-            <Link to={`/articles/${article_id}/comments/add-comment`}>
-              <button>Add Comment</button>
-            </Link>
-          </section>
+              <Link to={`/articles/${article_id}/comments`}>
+                <p>Comments: {comment_count}</p>
+              </Link>
+
+              <VoteChanger
+                value_id={article_id}
+                word="articles"
+                votes={votes}
+              />
+            </section>
+          </div>
         )}
       </div>
     );

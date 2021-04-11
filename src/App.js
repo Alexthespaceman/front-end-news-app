@@ -10,8 +10,6 @@ import IndividualUser from "./components/IndividualUser";
 import MostVotes from "./components/MostVotes";
 import Navbar from "./components/Navbar";
 import SortByAuthor from "./components/SortByAuthor";
-import SubHeader from "./components/SubHeader";
-import SubNavbar from "./components/SubNavbar";
 import TopicPage from "./components/TopicPage";
 import Topics from "./components/Topics";
 import Users from "./components/Users";
@@ -31,7 +29,7 @@ class App extends Component {
       <div className="App">
         <div className="head">
           <Header />
-          <SubHeader />
+          {/* <SubHeader /> */}
         </div>
 
         <Router>
@@ -39,7 +37,6 @@ class App extends Component {
           <IndividualArticle path="/article/:article_id" />
           <Topics path="/topics" />
           <TopicPage path="/articles/:slug" />
-
           <IndividualArticleComments path="/articles/:article_id/comments" />
           <Form path="/articles/:article_id/comments" />
           <Users path="/users" />
@@ -49,7 +46,7 @@ class App extends Component {
         </Router>
         <div className="nav">
           {" "}
-          <SubNavbar />
+          {/* <SubNavbar /> */}
           <Navbar />
         </div>
       </div>

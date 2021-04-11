@@ -12,7 +12,7 @@ export const getAllArticles = () => {
 
 export const getArticleById = (article_id) => {
   return request.get(`/articles/${article_id}`).then(({ data }) => {
-    return data.articles;
+    return data.articles.articles[0];
   });
 };
 
@@ -58,6 +58,9 @@ export const submitComment = (article_id, value) => {
     })
     .catch((err) => {
       console.dir(err);
+    })
+    .then((res) => {
+      return res.data.article;
     });
 };
 
