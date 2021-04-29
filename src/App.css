@@ -24,7 +24,8 @@
 }
 
 .articles {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   border: 4px blue solid;
 }
 
@@ -56,9 +57,24 @@
   border: 4px orange solid;
 }
 
-.comments {
-  text-align: center;
-  border: 4px purple solid;
+/* .comments {
+  display: table-row;
+  height: 100px;
+} */
+
+.voter1 {
+  margin: 0 auto;
+}
+
+.vote-button {
+  height: 20px;
+  margin: 10px;
+}
+
+.voter {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .topic-article {

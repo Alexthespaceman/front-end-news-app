@@ -16,15 +16,19 @@ class Users extends Component {
         {isLoading ? (
           <p>loading</p>
         ) : (
-          user.map((user) => {
-            const { username, avatar_url } = user;
-            return (
-              <div className="users">
-                <p>{username}</p>
-                <img className="user-img" src={avatar_url} alt="pic"></img>
-              </div>
-            );
-          })
+          user
+            .filter((user) => {
+              return user.username !== "jessjelly";
+            })
+            .map((user) => {
+              const { username, avatar_url } = user;
+              return (
+                <div className="users">
+                  <p>{username}</p>
+                  <img className="user-img" src={avatar_url} alt="pic"></img>
+                </div>
+              );
+            })
         )}
       </div>
     );

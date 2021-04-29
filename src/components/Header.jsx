@@ -7,13 +7,17 @@ class Header extends React.Component {
   render() {
     return (
       <header className="header">
+        <div>
+          {/* <image source={} /> */}
+          <p>jessjelly</p>
+        </div>
         <Link className="link1" to="/">
           <h1 className="title"> NC News App </h1>
         </Link>
 
         <Link to="/users">
           <button className="users-btn" type="button">
-            Users
+            Online Users
           </button>
         </Link>
       </header>

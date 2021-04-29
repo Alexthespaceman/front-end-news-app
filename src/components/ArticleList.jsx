@@ -48,15 +48,18 @@ class ArticleList extends Component {
                   <p className="article-title">{title}</p>
                 </Link>
               </div>
-              <p className="comments">
-                posted in {topic} by{" "}
-                <Link to={`/users/${author}`}>
-                  <p>{author}</p>
-                </Link>
-              </p>
+
+              <div className="comments">
+                <p>
+                  posted in {topic} by{" "}
+                  <Link to={`/users/${author}`}>
+                    <p>{author}</p>
+                  </Link>
+                </p>
+              </div>
 
               <VoteChanger
-                // className="voter"
+                className="voter1"
                 votes={votes}
                 value_id={article_id}
                 word="articles"
