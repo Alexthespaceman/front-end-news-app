@@ -1,5 +1,12 @@
-import React from "react";
+import * as React from "react";
+export function ErrorDisplayer({ status, msg }) {
+  return (
+    <div>
+      <p>
+        {status} - {msg}
+      </p>
+    </div>
+  );
+}
 
-export const ErrorDisplayer = (status, message) => {
-  return <div></div>;
-};
+export default ErrorDisplayer;

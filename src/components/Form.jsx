@@ -11,13 +11,12 @@ class Form extends Component {
 
   handleSubmit = (submitEvent) => {
     const { article_id } = this.props;
-
     const { comment } = this.state;
     submitEvent.preventDefault();
     api.submitComment(article_id, comment).then((newComment) => {
       this.props.addComment(newComment);
     });
-    this.setState({ comment: "" });
+     this.setState({ comment: "" });
   };
 
   render() {

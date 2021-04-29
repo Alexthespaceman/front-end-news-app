@@ -56,10 +56,8 @@ export const submitComment = (article_id, value) => {
       userName: "jessjelly",
       body: value,
     })
-    .catch((err) => {
-      console.dir(err);
-    })
     .then((res) => {
+      console.log(res.data.article);
       return res.data.article;
     });
 };
@@ -68,4 +66,8 @@ export const sortBy = (word) => {
   return request.get(`/articles?sort_by=${word}`).then((res) => {
     return res.data.articles;
   });
+};
+
+export const delCommentById = (comment_id) => {
+  return request.delete(`/comments/${comment_id}`);
 };

@@ -1,27 +1,32 @@
 import { Link } from "@reach/router";
-import React, { Component } from "react";
+import { Component } from "react";
+
 class Navbar extends Component {
-  state = [];
+  state = { articles: [] };
 
   render() {
     return (
-      <div className="nav">
-        <Link to="/articles/most-votes">
-          <button>most popular</button>
-        </Link>
+      <section className="nav">
+        <h4> sort Articles by : </h4>
 
-        <Link to="/">
-          <button>Newest</button>
-        </Link>
+        <div className="nav">
+          <Link to="/articles/most-votes">
+            <button>most popular</button>
+          </Link>
 
-        <Link to="/articles/author">
-          <button>Author</button>
-        </Link>
+          <Link to="/">
+            <button>Newest</button>
+          </Link>
 
-        <Link to="/add-article">
-          <button className="add-article-btn"> Add Article </button>
-        </Link>
-      </div>
+          <Link to="/articles/author">
+            <button>Author</button>
+          </Link>
+
+          <Link to="/add-article">
+            <button className="add-article-btn"> Add Article </button>
+          </Link>
+        </div>
+      </section>
     );
   }
 }

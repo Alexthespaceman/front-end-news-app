@@ -26,14 +26,20 @@ class VoteChanger extends Component {
     const { value_id, votes, word } = this.props;
 
     return (
-      <div>
-        <button onClick={() => this.updateVotes(value_id, 1, word)}>
+      <div className="voter">
+        <button
+          className="vote-button"
+          onClick={() => this.updateVotes(value_id, 1, word)}
+        >
           up vote
         </button>
-        <p className="votes">
+        <p>
           {word} votes: {votes + this.state.voteChanges}
         </p>
-        <button onClick={() => this.updateVotes(value_id, -1, word)}>
+        <button
+          className="vote-button"
+          onClick={() => this.updateVotes(value_id, -1, word)}
+        >
           down vote
         </button>
       </div>

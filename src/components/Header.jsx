@@ -7,12 +7,14 @@ class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <Link to="/">
-          <h1> NC News App </h1>
+        <Link className="link1" to="/">
+          <h1 className="title"> NC News App </h1>
         </Link>
 
         <Link to="/users">
-          <button type="button">Users</button>
+          <button className="users-btn" type="button">
+            Users
+          </button>
         </Link>
       </header>
     );
