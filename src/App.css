@@ -1,7 +1,11 @@
 .App {
   text-align: center;
-  border: 4px red solid;
+  /* border: 4px red solid; */
   height: 100vh;
+}
+
+body {
+  background-color: rgb(34, 34, 34);
 }
 
 /* overflow-scroll */
@@ -11,11 +15,24 @@
 
 .header {
   text-align: center;
-  border: 4px green solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(151, 12, 12);
+  border-radius: 0px 0px 5px 5px;
+  height: 10%;
+}
+
+.titel {
+  margin: 20px;
+}
+.users-btn {
+  margin: 20px;
+}
+
+.logged-in {
+  margin: 20px;
 }
 
 .head {
@@ -26,20 +43,97 @@
 .articles {
   display: flex;
   flex-direction: column;
-  border: 4px blue solid;
+  border: 4px rgb(69, 91, 150) solid;
+  background-color: rgb(56, 55, 55);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
 }
 
+.article-title-div {
+  background-color: rgb(143, 97, 97);
+  border-radius: 5px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: row;
+}
+
+.comments-child {
+  flex: 1;
+  font-size: x-small;
+  color: whitesmoke;
+}
+
+.voter {
+  display: flex;
+  flex-direction: column;
+}
+
+.vote-button {
+  flex: 1;
+}
+
+.article-title {
+  color: whitesmoke;
+}
+
+.link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+/* 
 .sub-nav {
   text-align: center;
   border: 4px yellow solid;
   position: sticky;
-}
+} */
 
 .nav {
   text-align: center;
-  border: 4px orange solid;
+  border-top-style: solid;
+  border-top-color: rgb(69, 91, 150);
   position: sticky;
   bottom: 0;
+  background-color: rgb(68, 68, 68);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.sort-by-buttons {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.nav h4 {
+  height: 10px;
+}
+
+.button1 {
+  flex: 1;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(69, 91, 150);
+  color: whitesmoke;
+}
+.button2 {
+  flex: 1;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(69, 91, 150);
+  color: whitesmoke;
+}
+.button3 {
+  flex: 1;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(69, 91, 150);
+  color: whitesmoke;
+}
+
+.nav h4 {
+  color: whitesmoke;
 }
 
 .sub-header {
@@ -69,6 +163,7 @@
 .vote-button {
   height: 20px;
   margin: 10px;
+  color: whitesmoke;
 }
 
 .voter {

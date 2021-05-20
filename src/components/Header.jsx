@@ -9,15 +9,15 @@ class Header extends React.Component {
       <header className="header">
         <div>
           {/* <image source={} /> */}
-          <p> You are logged in as: jessjelly</p>
+          <p className="logged-in"> logged in as: jessjelly</p>
         </div>
         <Link className="link1" to="/">
-          <h1 className="title"> NC News App </h1>
+          <h1 className="title"> NC News </h1>
         </Link>
 
         <Link to="/users">
           <button className="users-btn" type="button">
-            Online Users
+            Users
           </button>
         </Link>
       </header>

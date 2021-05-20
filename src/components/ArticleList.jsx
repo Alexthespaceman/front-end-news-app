@@ -53,19 +53,9 @@ class ArticleList extends Component {
           return (
             <div key={article_id} className="articles">
               <div className="article-title-div">
-                <Link to={`/article/${article_id}`}>
+                <Link className="link" to={`/article/${article_id}`}>
                   <p className="article-title">{title}</p>
                 </Link>
-              </div>
-
-              <div className="comments">
-                <p>
-                  posted in {topic} by{" "}
-                  <Link to={`/users/${author}`}>
-                    <p>{author}</p>
-                  </Link>
-                  at {created_at}
-                </p>
               </div>
 
               <VoteChanger
@@ -75,23 +65,50 @@ class ArticleList extends Component {
                 word="articles"
               />
 
-              <Link to={`/articles/${article_id}/comments`}>
+              <Link className="link" to={`/articles/${article_id}/comments`}>
                 <p>Comments: {comment_count}</p>
               </Link>
+
+              <div className="comments">
+                <p className="comments-child">
+                  posted in {topic} on {new Date(created_at).toDateString()} by
+                  <Link className="link" to={`/users/${author}`}>
+                    {author}
+                  </Link>
+                </p>
+
+                {/* <p className="comments-child">
+                  <Link className="link" to={`/users/${author}`}>
+                    <p>{author}</p>
+                  </Link>
+                </p> */}
+              </div>
             </div>
           );
         })}
         <section className="nav">
           <h4> sort Articles by : </h4>
 
-          <div className="nav">
-            <button value="sort_by=votes" onClick={this.sortArticles}>
+          <div className="sort-by-buttons">
+            <button
+              className="button1"
+              value="sort_by=votes"
+              onClick={this.sortArticles}
+            >
               most popular
             </button>
-            <button value="?order=desc" onClick={this.sortArticles}>
+            <button
+              className="button2"
+              value="?order=desc"
+              onClick={this.sortArticles}
+            >
               Newest
             </button>
-            <button value="sort_by=author" onClick={this.sortArticles}>
+            <button
+              className="button3"
+              value="sort_by=author"
+              onClick={this.sortArticles}
+            >
               Author
             </button>{" "}
           </div>

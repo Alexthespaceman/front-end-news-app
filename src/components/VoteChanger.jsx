@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import * as api from "../api";
 
 class VoteChanger extends Component {
@@ -27,21 +28,25 @@ class VoteChanger extends Component {
 
     return (
       <div className="voter">
-        <button
+        {/* <button
           className="vote-button"
           onClick={() => this.updateVotes(value_id, 1, word)}
-        >
-          up vote
-        </button>
-        <p>
-          {word} votes: {votes + this.state.voteChanges}
-        </p>
-        <button
+        > */}
+        <FaThumbsUp
+          className="vote-button"
+          onClick={() => this.updateVotes(value_id, 1, word)}
+        />
+        <p className="vote-button">votes: {votes + this.state.voteChanges}</p>
+        <FaThumbsDown
+          className="vote-button"
+          onClick={() => this.updateVotes(value_id, -1, word)}
+        />
+        {/* <button
           className="vote-button"
           onClick={() => this.updateVotes(value_id, -1, word)}
         >
           down vote
-        </button>
+        </button> */}
       </div>
     );
   }

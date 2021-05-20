@@ -30,7 +30,7 @@ class App extends Component {
           <Header />
         </div>
         <Router>
-          <ArticleList path="/" />
+          <ArticleList path="/" icon="fas fa-thumbs-up" />
           <IndividualArticle path="/article/:article_id" />
           <IndividualArticleComments path={`/articles/:article_id/comments`} />
           <Topics path="/topics" />
