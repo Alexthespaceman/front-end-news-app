@@ -9,6 +9,11 @@ export const getAllArticles = () => {
     return data.articles;
   });
 };
+export const getSortedArticles = (query) => {
+  return request.get(`/articles?${query}`).then(({ data }) => {
+    return data.articles;
+  });
+};
 
 export const getArticleById = (article_id) => {
   return request.get(`/articles/${article_id}`).then(({ data }) => {

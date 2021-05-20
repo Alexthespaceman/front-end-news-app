@@ -18,6 +18,13 @@ class ArticleList extends Component {
       });
   }
 
+  sortArticles = (event) => {
+    const query = event.target.value;
+    api.getSortedArticles(query).then((articles) => {
+      this.setState(articles);
+    });
+  };
+
   render() {
     const { articles, isLoading, err } = this.state;
     if (isLoading) {
@@ -30,6 +37,7 @@ class ArticleList extends Component {
       );
     }
 
+    console.log(articles);
     return (
       <div>
         {articles.map((article) => {
@@ -40,6 +48,7 @@ class ArticleList extends Component {
             votes,
             comment_count,
             article_id,
+            created_at,
           } = article;
           return (
             <div key={article_id} className="articles">
@@ -55,6 +64,7 @@ class ArticleList extends Component {
                   <Link to={`/users/${author}`}>
                     <p>{author}</p>
                   </Link>
+                  at {created_at}
                 </p>
               </div>
 
@@ -71,6 +81,21 @@ class ArticleList extends Component {
             </div>
           );
         })}
+        <section className="nav">
+          <h4> sort Articles by : </h4>
+
+          <div className="nav">
+            <button value="sort_by=votes" onClick={this.sortArticles}>
+              most popular
+            </button>
+            <button value="?order=desc" onClick={this.sortArticles}>
+              Newest
+            </button>
+            <button value="sort_by=author" onClick={this.sortArticles}>
+              Author
+            </button>{" "}
+          </div>
+        </section>
       </div>
     );
   }

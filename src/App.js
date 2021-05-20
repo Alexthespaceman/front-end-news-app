@@ -6,10 +6,8 @@ import Header from "./components/Header";
 import IndividualArticleComments from "./components/IndividualArticleComments";
 import IndividualArticle from "./components/IndividualArticles";
 import IndividualUser from "./components/IndividualUser";
-import MostVotes from "./components/MostVotes";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import NoMatch from "./components/NoMatch";
-import SortByAuthor from "./components/SortByAuthor";
 import TopicPage from "./components/TopicPage";
 import Topics from "./components/Topics";
 import Users from "./components/Users";
@@ -39,13 +37,11 @@ class App extends Component {
           <TopicPage path="/articles/:slug" />
           <Users path="/users" />
           <IndividualUser path="/users/:username" />
-          <MostVotes path="/articles/most-votes" word="votes" />
-          <SortByAuthor path="/articles/author" word="author" />
+          {/* <MostVotes path="/articles/most-votes" word="votes" />
+          <SortByAuthor path="/articles/author" word="author" /> */}
           <NoMatch default />
         </Router>
-        <div className="nav">
-          <Navbar />
-        </div>
+        <div className="nav">{/* <Navbar /> */}</div>
       </div>
     );
   }

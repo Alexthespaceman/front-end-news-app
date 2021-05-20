@@ -9,7 +9,7 @@ class Header extends React.Component {
       <header className="header">
         <div>
           {/* <image source={} /> */}
-          <p>jessjelly</p>
+          <p> You are logged in as: jessjelly</p>
         </div>
         <Link className="link1" to="/">
           <h1 className="title"> NC News App </h1>
