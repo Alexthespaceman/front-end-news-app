@@ -1,5 +1,6 @@
 import { Link } from "@reach/router";
 import { Component } from "react";
+import { FaClock, FaComments, FaThumbsUp, FaUser } from "react-icons/fa";
 import * as api from "../api";
 import { default as ErrorDisplayer, default as Loader } from "./ErrorDisplayer";
 import VoteChanger from "./VoteChanger";
@@ -66,7 +67,9 @@ class ArticleList extends Component {
               />
 
               <Link className="link" to={`/articles/${article_id}/comments`}>
-                <p>Comments: {comment_count}</p>
+                <p>
+                  <FaComments /> {comment_count}
+                </p>
               </Link>
 
               <div className="comments">
@@ -76,12 +79,6 @@ class ArticleList extends Component {
                     {author}
                   </Link>
                 </p>
-
-                {/* <p className="comments-child">
-                  <Link className="link" to={`/users/${author}`}>
-                    <p>{author}</p>
-                  </Link>
-                </p> */}
               </div>
             </div>
           );
@@ -95,21 +92,21 @@ class ArticleList extends Component {
               value="sort_by=votes"
               onClick={this.sortArticles}
             >
-              most popular
+              <FaThumbsUp />
             </button>
             <button
               className="button2"
               value="?order=desc"
               onClick={this.sortArticles}
             >
-              Newest
+              <FaClock />
             </button>
             <button
               className="button3"
               value="sort_by=author"
               onClick={this.sortArticles}
             >
-              Author
+              <FaUser />
             </button>{" "}
           </div>
         </section>

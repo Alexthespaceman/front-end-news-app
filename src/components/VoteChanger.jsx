@@ -36,7 +36,7 @@ class VoteChanger extends Component {
           className="vote-button"
           onClick={() => this.updateVotes(value_id, 1, word)}
         />
-        <p className="vote-button">votes: {votes + this.state.voteChanges}</p>
+        <p className="vote-button">{votes + this.state.voteChanges}</p>
         <FaThumbsDown
           className="vote-button"
           onClick={() => this.updateVotes(value_id, -1, word)}

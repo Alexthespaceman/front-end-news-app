@@ -1,5 +1,8 @@
 import { Link } from "@reach/router";
 import React from "react";
+import { CgProfile } from "react-icons/cg";
+import { FaUsers } from "react-icons/fa";
+import image from "../images/northcoders.png";
 
 class Header extends React.Component {
   state = {};
@@ -7,18 +10,18 @@ class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <div>
-          {/* <image source={} /> */}
-          <p className="logged-in"> logged in as: jessjelly</p>
-        </div>
-        <Link className="link1" to="/">
-          <h1 className="title"> NC News </h1>
+        <Link to="/">
+          <img className="logo" src={image} alt="logo" />
         </Link>
+        <div>
+          <p className="logged-in">
+            {" "}
+            <CgProfile /> jessjelly
+          </p>
+        </div>
 
         <Link to="/users">
-          <button className="users-btn" type="button">
-            Users
-          </button>
+          <FaUsers className="users-btn" />
         </Link>
       </header>
     );
