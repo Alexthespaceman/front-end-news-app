@@ -50,8 +50,8 @@ class IndividualArticle extends Component {
     return (
       <div>
         <section className="article">
-          <h2>{title}</h2>
-          <p>{body}</p>
+          <h2 className="article-title">{title}</h2>
+          <p className="article-body">{body}</p>
 
           {/* <Link to={`/articles/${article_id}/comments`}>
             <p>Comments: {comment_count}</p>

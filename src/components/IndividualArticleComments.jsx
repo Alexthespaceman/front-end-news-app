@@ -1,5 +1,6 @@
 import { Link } from "@reach/router";
 import { Component } from "react";
+import { MdDelete } from "react-icons/md";
 import * as api from "../api";
 import ErrorDisplayer from "./ErrorDisplayer";
 import Form from "./Form";
@@ -59,21 +60,24 @@ class IndividualArticleComments extends Component {
     }
 
     return (
-      <div>
+      <div className="comments-div">
         <Form addComment={this.addComment} article_id={this.props.article_id} />
         {comments.map((comment) => {
           const { comment_id, author, votes, created_at, body } = comment;
           return (
             <div className="comments" key={comment_id}>
-              <Link to={`/users/${author}`}>
-                <p>User name: {author}</p>
+              <Link className="link " to={`/users/${author}`}>
+                <p className="article-title">posted by: {author}</p>
               </Link>
-              <p>{body}</p>
+              <p className="comment-body">{body}</p>
 
-              <p> time: {created_at}</p>
+              <p className="time">{new Date(created_at).toDateString()}</p>
               {author === "jessjelly" ? (
-                <button onClick={() => this.delComment(comment_id)}>
-                  delete comment
+                <button
+                  className="sub-butt"
+                  onClick={() => this.delComment(comment_id)}
+                >
+                  <MdDelete className="del-butt" />
                 </button>
               ) : (
                 <VoteChanger

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FaComment } from "react-icons/fa";
 import * as api from "../api";
 
 class Form extends Component {
@@ -16,15 +17,17 @@ class Form extends Component {
     api.submitComment(article_id, comment).then((newComment) => {
       this.props.addComment(newComment);
     });
-     this.setState({ comment: "" });
+    this.setState({ comment: "" });
   };
 
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div className="comment-section">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="lname">Add a comment:</label>
+          <label className="form-name" htmlFor="lname">
+            Add a comment:
+          </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -33,7 +36,9 @@ class Form extends Component {
             name="lname"
           ></input>
           <br></br>
-          <input type="submit" value="Submit"></input>
+          <button type="submit" className="sub-butt">
+            <FaComment className="del-butt" />
+          </button>
         </form>
       </div>
     );

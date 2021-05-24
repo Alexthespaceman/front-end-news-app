@@ -53,7 +53,8 @@ body {
 .articles {
   display: flex;
   flex-direction: column;
-  border: 4px rgb(69, 91, 150) solid;
+  border: 4px solid;
+  border-color: lightblue;
   background-color: rgb(56, 55, 55);
   padding: 20px;
   margin: 20px;
@@ -66,13 +67,17 @@ body {
 }
 
 .comments {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
+  /* border: 4px rgb(69, 91, 150) solid;
+  margin: 10px; */
+  /* padding: 10px;
+  background-color: rgb(56, 55, 55); */
 }
 
 .comments-child {
   flex: 1;
-  font-size: x-small;
+  font-size: small;
   color: whitesmoke;
 }
 
@@ -87,6 +92,20 @@ body {
 
 .article-title {
   color: whitesmoke;
+}
+
+.article {
+  width: 100%;
+}
+
+.article-body {
+  color: whitesmoke;
+  padding: 10px;
+  margin: 10px;
+  border: 4px solid;
+  border-color: lightblue;
+  border-radius: 15px;
+  background-color: rgb(56, 55, 55);
 }
 
 .link {
@@ -198,6 +217,47 @@ body {
 .users {
   text-align: center;
   border: 4px rgb(238, 120, 41) solid;
+}
+
+.comments {
+  /* border: 4px rgb(69, 91, 150) solid; */
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(56, 55, 55);
+  border-radius: 15px;
+}
+
+.form-name {
+  color: whitesmoke;
+}
+
+.comments-div {
+  margin: 10px;
+  padding: 10px;
+}
+
+.comment-body {
+  color: whitesmoke;
+}
+
+.time {
+  color: lightblue;
+}
+
+.sub-butt {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: whitesmoke;
+  margin: 5px;
+}
+
+.del-butt {
+  width: 20px;
+  height: 30px;
 }
 
 /* 
