@@ -61,7 +61,11 @@ class IndividualArticleComments extends Component {
 
     return (
       <div className="comments-div">
-        <Form addComment={this.addComment} article_id={this.props.article_id} />
+        <Form
+          addComment={this.addComment}
+          article_id={this.props.article_id}
+          comment_count={this.props.comment_count}
+        />
         {comments.map((comment) => {
           const { comment_id, author, votes, created_at, body } = comment;
           return (

@@ -1,6 +1,7 @@
 import { Link } from "@reach/router";
 import React, { Component } from "react";
 import * as api from "../api";
+import { default as Loader } from "./Loader";
 
 class Topics extends Component {
   state = { topics: [], isLoading: true };
@@ -16,16 +17,17 @@ class Topics extends Component {
 
     return (
       <div>
+        <h1 className="topics-h1">Filter Articles from the Topics below</h1>
         {isLoading ? (
-          <p>Loading</p>
+          <Loader />
         ) : (
           topics.topics.map((topic) => {
             const { slug, description } = topic;
             return (
-              <div className="topics2">
-                <p>{description}</p>
+              <div className="articles">
+                <p className="article-des-div">{description}</p>
                 <Link to={`/articles/${slug}`}>
-                  <button>{slug}</button>
+                  <button className="button">{slug}</button>
                 </Link>
               </div>
             );

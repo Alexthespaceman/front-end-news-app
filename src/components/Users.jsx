@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CgProfile } from "react-icons/cg";
 import * as api from "../api";
+import { default as Loader } from "./Loader";
 
 class Users extends Component {
   state = { user: [] };
@@ -12,12 +13,11 @@ class Users extends Component {
   }
 
   render() {
-    console.log(this.state);
     const { user, isLoading } = this.state;
     return (
       <div>
         {isLoading ? (
-          <p>loading</p>
+          <Loader />
         ) : (
           user
             .filter((user) => {

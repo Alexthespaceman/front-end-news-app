@@ -1,8 +1,10 @@
 import { Link } from "@reach/router";
 import React, { Component } from "react";
+import { BsFilterLeft } from "react-icons/bs";
+import { FaComments, FaThumbsUp, FaUser } from "react-icons/fa";
 import * as api from "../api";
 import ErrorDisplayer from "./ErrorDisplayer";
-import Loader from "./Loader";
+import { default as Loader } from "./Loader";
 
 class TopicPage extends Component {
   state = { articles: [], isLoading: true, err: null };
@@ -33,27 +35,36 @@ class TopicPage extends Component {
       );
     }
 
+    console.log(this.state.articles);
     return (
       <div>
         {articles.map((article) => {
-          const {
-            author,
-            title,
-            topic,
-            votes,
-            comment_count,
-            article_id,
-          } = article;
+          const { author, title, topic, votes, comment_count, article_id } =
+            article;
           return (
-            <div className="topic-article" key={article_id}>
-              <Link to={`/article/${article_id}`}>
-                <p>Article Title{title}</p>
+            <div className="articles" key={article_id}>
+              <Link className="link" to={`/article/${article_id}`}>
+                <p className="topics-title">Article Title{title}</p>
               </Link>
 
-              <p>user:{author}</p>
-              <p>Topic:{topic}</p>
-              <p>Votes{votes}</p>
-              <p>Comment Count:{comment_count}</p>
+              <Link to={`/users/${author}`}>
+                <p className="filteres-btn">
+                  <FaUser /> {author}
+                </p>
+              </Link>
+              <p className="filteres-btn">
+                <BsFilterLeft />
+                {topic}
+              </p>
+              <p className="filteres-btn">
+                <FaThumbsUp />
+                {votes}
+              </p>
+              <Link to={`/articles/${article_id}/comments`}>
+                <p className="filteres-btn">
+                  <FaComments /> {comment_count}
+                </p>
+              </Link>
             </div>
           );
         })}

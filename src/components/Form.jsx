@@ -23,7 +23,7 @@ class Form extends Component {
   render() {
     console.log(this.state);
     return (
-      <div className="comment-section">
+      <div className="add-comment">
         <form onSubmit={this.handleSubmit}>
           <label className="form-name" htmlFor="lname">
             Add a comment:
@@ -39,6 +39,7 @@ class Form extends Component {
           <button type="submit" className="sub-butt">
             <FaComment className="del-butt" />
           </button>
+          <p className="posted-in">{this.props.comment_count} Comments</p>
         </form>
       </div>
     );

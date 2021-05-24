@@ -32,8 +32,8 @@ class IndividualArticle extends Component {
   // };
 
   render() {
-    console.log(this.state.articles);
-    const { body, votes, title } = this.state.article;
+    console.log(this.state.article);
+    const { body, votes, title, comment_count, topic } = this.state.article;
     const { article_id } = this.props;
     const { err, isLoading } = this.state;
 
@@ -47,17 +47,18 @@ class IndividualArticle extends Component {
         <ErrorDisplayer status={response.status} msg={response.data.msg} />
       );
     }
+
     return (
       <div>
         <section className="article">
           <h2 className="article-title">{title}</h2>
           <p className="article-body">{body}</p>
+          <p className="posted-in"> Posted in {topic}</p>
 
-          {/* <Link to={`/articles/${article_id}/comments`}>
-            <p>Comments: {comment_count}</p>
-          </Link> */}
-
-          <IndividualArticleComments article_id={article_id} />
+          <IndividualArticleComments
+            article_id={article_id}
+            comment_count={comment_count}
+          />
 
           <h2 className="vote-h2">Vote on this article</h2>
           <VoteChanger value_id={article_id} word="articles" votes={votes} />

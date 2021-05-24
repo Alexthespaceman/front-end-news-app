@@ -2,7 +2,8 @@ import { Link } from "@reach/router";
 import { Component } from "react";
 import { FaClock, FaComments, FaThumbsUp, FaUser } from "react-icons/fa";
 import * as api from "../api";
-import { default as ErrorDisplayer, default as Loader } from "./ErrorDisplayer";
+import { default as ErrorDisplayer } from "./ErrorDisplayer";
+import { default as Loader } from "./Loader";
 import VoteChanger from "./VoteChanger";
 
 class ArticleList extends Component {
@@ -38,7 +39,6 @@ class ArticleList extends Component {
       );
     }
 
-    console.log(articles);
     return (
       <div>
         {articles.map((article) => {

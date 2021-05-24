@@ -28,10 +28,6 @@ class VoteChanger extends Component {
 
     return (
       <div className="voter">
-        {/* <button
-          className="vote-button"
-          onClick={() => this.updateVotes(value_id, 1, word)}
-        > */}
         <FaThumbsUp
           className="vote-button"
           onClick={() => this.updateVotes(value_id, 1, word)}
@@ -41,12 +37,6 @@ class VoteChanger extends Component {
           className="vote-button"
           onClick={() => this.updateVotes(value_id, -1, word)}
         />
-        {/* <button
-          className="vote-button"
-          onClick={() => this.updateVotes(value_id, -1, word)}
-        >
-          down vote
-        </button> */}
       </div>
     );
   }

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import IndividualArticleComments from "./components/IndividualArticleComments";
 import IndividualArticle from "./components/IndividualArticles";
 import IndividualUser from "./components/IndividualUser";
+import LoggedInUser from "./components/LoggedInUser";
 // import Navbar from "./components/Navbar";
 import NoMatch from "./components/NoMatch";
 import TopicPage from "./components/TopicPage";
@@ -23,7 +24,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("hello");
     return (
       <div className="App">
         <div className="head">
@@ -35,13 +35,11 @@ class App extends Component {
           <IndividualArticleComments path={`/articles/:article_id/comments`} />
           <Topics path="/topics" />
           <TopicPage path="/articles/:slug" />
+          <LoggedInUser path="jess-jelly" />
           <Users path="/users" />
           <IndividualUser path="/users/:username" />
-          {/* <MostVotes path="/articles/most-votes" word="votes" />
-          <SortByAuthor path="/articles/author" word="author" /> */}
           <NoMatch default />
         </Router>
-        <div className="nav">{/* <Navbar /> */}</div>
       </div>
     );
   }
