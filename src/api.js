@@ -62,7 +62,6 @@ export const submitComment = (article_id, value) => {
       body: value,
     })
     .then((res) => {
-      console.log(res.data.article);
       return res.data.article;
     });
 };

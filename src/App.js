@@ -7,22 +7,12 @@ import IndividualArticleComments from "./components/IndividualArticleComments";
 import IndividualArticle from "./components/IndividualArticles";
 import IndividualUser from "./components/IndividualUser";
 import LoggedInUser from "./components/LoggedInUser";
-// import Navbar from "./components/Navbar";
 import NoMatch from "./components/NoMatch";
 import TopicPage from "./components/TopicPage";
 import Topics from "./components/Topics";
 import Users from "./components/Users";
 
 class App extends Component {
-  state = {
-    user: {
-      username: "jessjelly",
-      avatar_url:
-        "https://vignette.wikia.nocookie.net/mrmen/images/4/4f/MR_JELLY_4A.jpg/revision/latest?cb=20180104121141",
-      name: "Jess Jelly",
-    },
-  };
-
   render() {
     return (
       <div className="App">

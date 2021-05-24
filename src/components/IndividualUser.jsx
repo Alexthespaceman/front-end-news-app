@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
+import { default as Loader } from "./Loader";
 
 class IndividualUser extends Component {
   state = { user: [], isLoading: true };
@@ -17,12 +18,12 @@ class IndividualUser extends Component {
     return (
       <div>
         {isLoading ? (
-          <p>loading</p>
+          <Loader />
         ) : (
           <div className="users">
-            <p>{username}</p>
+            <p className="user-name">{username}</p>
             <img className="user-img" src={avatar_url} alt="pic"></img>
-            <p>{name}</p>
+            <p className="user-name">{name}</p>
           </div>
         )}
       </div>

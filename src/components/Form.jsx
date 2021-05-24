@@ -21,7 +21,6 @@ class Form extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="add-comment">
         <form onSubmit={this.handleSubmit}>

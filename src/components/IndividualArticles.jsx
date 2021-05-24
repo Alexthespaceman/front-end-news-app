@@ -24,15 +24,7 @@ class IndividualArticle extends Component {
       });
   }
 
-  // sortArticles = (event) => {
-  //   const query = event.target.value;
-  //   api.sortBy(query).then((articles) => {
-  //     this.setState({ articles });
-  //   });
-  // };
-
   render() {
-    console.log(this.state.article);
     const { body, votes, title, comment_count, topic } = this.state.article;
     const { article_id } = this.props;
     const { err, isLoading } = this.state;

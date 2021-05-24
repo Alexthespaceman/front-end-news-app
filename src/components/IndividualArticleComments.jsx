@@ -53,7 +53,6 @@ class IndividualArticleComments extends Component {
     }
     if (err) {
       const { response } = err;
-      console.log(response);
       return (
         <ErrorDisplayer status={response.status} msg={response.data.msg} />
       );

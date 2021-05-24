@@ -35,7 +35,6 @@ class TopicPage extends Component {
       );
     }
 
-    console.log(this.state.articles);
     return (
       <div>
         {articles.map((article) => {
