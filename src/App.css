@@ -144,29 +144,45 @@ body {
 .button1 {
   flex: 1;
   height: 40px;
-  border-radius: 5px;
-  background-color: rgb(69, 91, 150);
   color: whitesmoke;
   margin: 5px;
   font-size: 25px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 .button2 {
   flex: 1;
   height: 40px;
-  border-radius: 5px;
-  background-color: rgb(69, 91, 150);
+  /* border-radius: 5px; */
+  /* background-color: rgb(69, 91, 150); */
   color: whitesmoke;
   margin: 5px;
   font-size: 25px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 .button3 {
   flex: 1;
   height: 40px;
-  border-radius: 5px;
-  background-color: rgb(69, 91, 150);
+  /* border-radius: 5px; */
+  /* background-color: rgb(69, 91, 150); */
   color: whitesmoke;
   margin: 5px;
   font-size: 25px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 
 .nav h4 {
@@ -216,7 +232,11 @@ body {
 
 .users {
   text-align: center;
-  border: 4px rgb(238, 120, 41) solid;
+  background-color: rgb(56, 55, 55);
+  border-radius: 15px;
+  border: 3px lightblue solid;
+  margin: 10px;
+  padding: 10px;
 }
 
 .comments {
@@ -255,9 +275,29 @@ body {
   margin: 5px;
 }
 
+.vote-h2 {
+  color: whitesmoke;
+}
+
 .del-butt {
   width: 20px;
   height: 30px;
+}
+
+.user-name {
+  color: whitesmoke;
+}
+
+.container {
+  height: 50px;
+  width: 50%;
+}
+
+.user-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 /* 

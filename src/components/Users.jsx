@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { CgProfile } from "react-icons/cg";
 import * as api from "../api";
+
 class Users extends Component {
   state = { user: [] };
 
@@ -10,6 +12,7 @@ class Users extends Component {
   }
 
   render() {
+    console.log(this.state);
     const { user, isLoading } = this.state;
     return (
       <div>
@@ -21,11 +24,18 @@ class Users extends Component {
               return user.username !== "jessjelly";
             })
             .map((user) => {
-              const { username, avatar_url } = user;
+              const { username, avatar_url, name } = user;
               return (
                 <div className="users">
-                  <p>{username}</p>
-                  <img className="user-img" src={avatar_url} alt="pic"></img>
+                  <p className="user-name">
+                    {" "}
+                    <CgProfile />
+                    {username}
+                  </p>
+                  <p className="user-name">{name}</p>
+                  <div>
+                    <img className="user-img" src={avatar_url} alt="pic"></img>
+                  </div>
                 </div>
               );
             })

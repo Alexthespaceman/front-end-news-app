@@ -59,6 +59,7 @@ class IndividualArticle extends Component {
 
           <IndividualArticleComments article_id={article_id} />
 
+          <h2 className="vote-h2">Vote on this article</h2>
           <VoteChanger value_id={article_id} word="articles" votes={votes} />
         </section>
       </div>
