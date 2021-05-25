@@ -75,6 +75,7 @@ class ArticleList extends Component {
               <div className="comments">
                 <p className="comments-child">
                   posted in {topic} on {new Date(created_at).toDateString()} by
+                  .
                   <Link className="link" to={`/users/${author}`}>
                     {author}
                   </Link>

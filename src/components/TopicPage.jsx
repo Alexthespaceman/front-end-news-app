@@ -43,7 +43,7 @@ class TopicPage extends Component {
           return (
             <div className="articles" key={article_id}>
               <Link className="link" to={`/article/${article_id}`}>
-                <p className="topics-title">Article Title{title}</p>
+                <p className="topics-title">{title}</p>
               </Link>
 
               <Link to={`/users/${author}`}>
