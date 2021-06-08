@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+
 
 North Coders news Application
 
