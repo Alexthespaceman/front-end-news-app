@@ -216,6 +216,12 @@ body {
   border: 4px orange solid;
 }
 
+.home-page-header {
+  font-size: x-large;
+  color: whitesmoke;
+  padding: 5px;
+}
+
 /* .comments {
   display: table-row;
   height: 100px;
@@ -400,5 +406,13 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 375px) {
+  .home-page-header {
+    font-size: medium;
+    color: whitesmoke;
+    padding: 5px;
   }
 }
