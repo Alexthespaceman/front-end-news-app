@@ -37,9 +37,15 @@ class TopicPage extends Component {
 
     return (
       <div>
+        <div>
+          <h1 className="home-page-header">
+            These articles are sorted by {this.props.slug}
+          </h1>
+        </div>
         {articles.map((article) => {
           const { author, title, topic, votes, comment_count, article_id } =
             article;
+
           return (
             <div className="articles" key={article_id}>
               <Link className="link" to={`/article/${article_id}`}>
