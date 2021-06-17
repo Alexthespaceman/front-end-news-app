@@ -17,6 +17,9 @@ class Users extends Component {
     const { user, isLoading } = this.state;
     return (
       <div>
+        <div>
+          <h1 className="home-page-header">Users that are currently online</h1>
+        </div>
         {isLoading ? (
           <Loader />
         ) : (
