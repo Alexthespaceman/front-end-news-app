@@ -41,6 +41,11 @@ class ArticleList extends Component {
 
     return (
       <div>
+        <div>
+          <h1 className="home-page-header">
+            Welcome to the North Coders News app, browse all articles below
+          </h1>
+        </div>
         {articles.map((article) => {
           const {
             author,
